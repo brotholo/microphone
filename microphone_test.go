@@ -2,14 +2,15 @@ package microphone
 
 import (
 	"fmt"
-	"github.com/brotholo/beep/wav"
-	"github.com/pkg/errors"
-	"github.com/stretchr/testify/assert"
 	"log"
 	"os"
 	"os/signal"
 	"strings"
 	"testing"
+
+	"github.com/brotholo/beep/wav"
+	"github.com/pkg/errors"
+	"github.com/stretchr/testify/assert"
 )
 
 func ExampleOpenDefaultStream_recordWav() {
@@ -25,7 +26,7 @@ func ExampleOpenDefaultStream_recordWav() {
 	}
 	defer Terminate()
 
-	stream, format, err := OpenDefaultStream(44100, 1)
+	stream, format, err := OpenDefaultStream(44100, 1, 3)
 	if err != nil {
 		log.Fatal(err)
 	}
