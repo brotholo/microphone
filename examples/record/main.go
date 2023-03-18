@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/MarkKremer/microphone"
-	"github.com/faiface/beep/wav"
+	"github.com/brotholo/beep/wav"
+	"github.com/brotholo/microphone"
 	"log"
 	"os"
 	"os/signal"
