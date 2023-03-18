@@ -44,7 +44,7 @@ func Terminate() error {
 const bufferSize = 512
 
 // OpenDefaultStream opens the default input stream.
-func OpenDefaultStream(sampleRate beep.SampleRate, inputChannels int, Precision int) (s *Streamer, format beep.Format, err error) {
+func OpenDefaultStream(sampleRate beep.SampleRate, inputChannels int, inputPrecision int) (s *Streamer, format beep.Format, err error) {
 	if inputChannels > 2 || inputChannels == 0 {
 		return nil, beep.Format{}, invalidAmountOfInputChannelsError
 	}
@@ -69,7 +69,7 @@ func OpenDefaultStream(sampleRate beep.SampleRate, inputChannels int, Precision 
 		// NOTE(m): I couldn't find how to obtain the actual precision
 		// from the microphone. 3 bytes is the highest precision
 		// supported by the beep library for saving WAV files.
-		Precision: Precision,
+		Precision: inputPrecision,
 	}
 	return
 }
